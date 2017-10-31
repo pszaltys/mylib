@@ -1,14 +1,11 @@
 CMAKE_MINIMUM_REQUIRED ( VERSION 2.8 )
-PROJECT ( UnitTest )
+PROJECT ( MyLib C CXX)
 
 SET_PROPERTY(GLOBAL PROPERTY USE_FOLDERS ON)
 
+ADD_SUBDIRECTORY ( libcommon )
+ADD_SUBDIRECTORY ( libmat )
 ADD_SUBDIRECTORY ( libunittest )
-ADD_SUBDIRECTORY ( libassocvector )
 ADD_SUBDIRECTORY ( xunittest )
-ADD_SUBDIRECTORY ( xassocvector )
 ADD_SUBDIRECTORY ( libdesignpat )
 ADD_SUBDIRECTORY ( xtestdesignpat )
-ADD_SUBDIRECTORY ( libwinbgi )
-# ADD_SUBDIRECTORY ( liblife )
-# ADD_SUBDIRECTORY ( xlife )

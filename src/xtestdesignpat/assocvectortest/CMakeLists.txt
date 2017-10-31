@@ -1,8 +1,6 @@
-LIST ( APPEND factorytest_files
-	ConcProd.h
-	ProductBase.h
-	factorytest.h
-	factorytest.cpp
+LIST ( APPEND assocvectortest_files
+	assocvecttest.h
+	assocvecttest.cpp
 ) 
 
 INCLUDE_DIRECTORIES (
@@ -12,6 +10,6 @@ INCLUDE_DIRECTORIES (
   ${MyLib_SOURCE_DIR}/libdesignpat
 )
 
-ADD_LIBRARY ( factorytest ${factorytest_files} )
+ADD_LIBRARY ( assocvectortest ${assocvectortest_files} )
 # SET_TARGET_PROPERTIES(factorytest PROPERTIES LINKER_LANGUAGE CXX)
 # SET_PROPERTY(TARGET factorytest PROPERTY FOLDER "xtestdesignpat")

@@ -4,7 +4,7 @@ LIST ( APPEND xunittest_files
 
 
 INCLUDE_DIRECTORIES (
-  ${UnitTest_SOURCE_DIR}/libunittest
+  ${MyLib_SOURCE_DIR}/libunittest
 )
 
 

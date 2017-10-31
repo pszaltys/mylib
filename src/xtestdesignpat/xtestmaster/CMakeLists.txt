@@ -4,9 +4,11 @@ LIST ( APPEND xtestmaster_files
 
 
 INCLUDE_DIRECTORIES (
-  ${UnitTest_SOURCE_DIR}/libdesignpat
-  ${UnitTest_SOURCE_DIR}/xtestdesignpat
-  ${UnitTest_SOURCE_DIR}/libunittest
+  ${MyLib_SOURCE_DIR}/libdesignpat
+  ${MyLib_SOURCE_DIR}/libcommon
+  ${MyLib_SOURCE_DIR}/libmat
+  ${MyLib_SOURCE_DIR}/xtestdesignpat
+  ${MyLib_SOURCE_DIR}/libunittest
 )
 
 #LINK_DIRECTORIES (
@@ -20,7 +22,10 @@ ADD_EXECUTABLE ( xtestmaster ${xtestmaster_files} )
 # !!!  the order of the libraries in the list is IMPORTANT !!!
 TARGET_LINK_LIBRARIES ( xtestmaster 
 	unittest
+	mat
+	common
 	designpat
+	commontest
 	factorytest
 	functortest
 	singletontest

@@ -1,4 +1,5 @@
 LIST ( APPEND designpat_files
+	assocvector.h
 	factory.h
 	functor.h
 	factory.cpp

@@ -27,7 +27,7 @@ void TestMaster::AddTest(Test* t) /*throw(UnitTestError) */
 void TestMaster::AddTestMaster(const TestMaster& s)
 {
 	for (size_t i = 0; i < s.mcoltests.size(); ++i) {
-		assert(mcoltests[i]);
+	//	assert(mcoltests[i]);
 		AddTest(s.mcoltests[i]);
 	}
 }
