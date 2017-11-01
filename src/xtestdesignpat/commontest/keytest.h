@@ -8,16 +8,18 @@ class KeyTest : public UnitTest::Test
 {
 	template< int N>
 	void Constructors();
-
 	template< int N, typename T>
 	void Constructors();
-
+	template<typename... I>
+	void Constructors(I... ids);
 	void Constructors();
 
 	template< int N, typename T>
 	void Accessors();
-
 	void Accessors();
+
+	void Ops();
+	void Sort();
 public:
 	void Run();
 };

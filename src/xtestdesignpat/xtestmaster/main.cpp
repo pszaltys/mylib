@@ -5,6 +5,7 @@
 #include "visitortest/visitortest.h"
 
 #include "commontest/keytest.h"
+#include "mattest/smatrixtest.h"
 
 #include "testmaster.h"
 
@@ -20,16 +21,22 @@ int main()
 		despatttests.AddTest(new SingletonTest);
 		despatttests.AddTest(new VisitorTest);
 		despatttests.AddTest(new AssocVectTest);
+		despatttests.Run();
+		despatttests.Report();
+		despatttests.Free();
 
 		UnitTest::TestMaster commontests("Common lib unit tests");
 		commontests.AddTest(new KeyTest);
+		commontests.Run();
+		commontests.Report();
+		commontests.Free();
 
-		UnitTest::TestMaster runtest("Run test master");
-		runtest.AddTestMaster(despatttests);
-		runtest.AddTestMaster(commontests);
-		runtest.Run();
-		runtest.Report();
-		runtest.Free();
+		UnitTest::TestMaster mattests("Mat lib unit tests");
+		mattests.AddTest(new SMatrixTest);
+		mattests.Run();
+		mattests.Report();
+		mattests.Free();
+
 	}
 	catch (UnitTest::UnitTestError& err)
 	{

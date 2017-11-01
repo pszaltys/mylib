@@ -25,6 +25,7 @@ TARGET_LINK_LIBRARIES ( xtestmaster
 	mat
 	common
 	designpat
+	mattest
 	commontest
 	factorytest
 	functortest

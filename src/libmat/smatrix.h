@@ -1,6 +1,9 @@
 #ifndef SMATRIX_H
 #define SMATRIX_H
 
+#include <map>
+#include "key.h"
+
 template<typename T, int N = 2>
 class SMatrix
 {
@@ -11,7 +14,6 @@ public:
 	const T&	cVal(I... ids)
 	{
 		Key<sizeof...(ids)> k(ids...);
-
 		return mmap[k];
 	}
 
@@ -19,13 +21,16 @@ public:
 	T&	rVal(I... ids)
 	{
 		Key<sizeof...(ids)> k(ids...);
-
 		return mmap[k];
 	}
 
 	void Init2d(const vector<int>& i, const vector<int>& j, const vector<T>& val);
+
+//	template<Args... A>
+//	void Init(A... args);
+
 private:
-	map<KeyVal, T>		mmap;
+	std::map<KeyVal, T>		mmap;
 
 };
 
@@ -39,10 +44,16 @@ void SMatrix<T, N>::Init2d(const vector<int>& i, const vector<int>& j, const vec
 	for (size_t k = 0; k < i.size(); ++k)
 	{
 		Key<2> key(i[k], j[k]);
-		if (!mmap.insert(make_pair(key, val[k])).second)
+		if (!mmap.insert(std::make_pair(key, val[k])).second)
 			throw "Error: SMatrix<T, N>::Init2d - duplicate entry";
 	}
 }
 
+//template<typename T, int N>
+//template<Args... A>
+//void SMatrix<T, N>::Init(A... args)
+//{
+//
+//}
 
 #endif // SMATRIX_H 
