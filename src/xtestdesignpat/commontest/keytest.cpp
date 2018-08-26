@@ -56,7 +56,7 @@ void KeyTest::Constructors(I... ids)
 	Key<sizeof...(ids)> key(ids.second...);
 	
 	auto f = [this](Key<sizeof...(ids)>& k, std::pair<int,int> p) {test_( k.cKey(p.first) == p.second); };
-	int dummy[] = { 0, (f(key, std::forward<I>(ids)), 0)... };
+	int dummy[] = { 0, (f(key, std::forward<I>(ids)), 0)... }; //{ 0, ...} zero in case f is empty
 }
 
 void KeyTest::Constructors()

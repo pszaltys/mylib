@@ -5,6 +5,7 @@
 #include "visitortest/visitortest.h"
 
 #include "commontest/keytest.h"
+#include "commontest/helperstest.h"
 #include "mattest/smatrixtest.h"
 
 #include "testmaster.h"
@@ -27,6 +28,7 @@ int main()
 
 		UnitTest::TestMaster commontests("Common lib unit tests");
 		commontests.AddTest(new KeyTest);
+		commontests.AddTest(new HelpersTest);
 		commontests.Run();
 		commontests.Report();
 		commontests.Free();

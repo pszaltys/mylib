@@ -1,6 +1,8 @@
 LIST ( APPEND commontest_files
 	keytest.h
 	keytest.cpp
+	helperstest.h
+	helperstest.cpp
 ) 
 
 INCLUDE_DIRECTORIES (

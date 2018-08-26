@@ -1,6 +1,7 @@
 LIST ( APPEND common_files
 	key.h
 	key.cpp
+	helpers.h
 ) 
 
 # INCLUDE_DIRECTORIES (
